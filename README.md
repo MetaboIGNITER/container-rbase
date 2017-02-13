@@ -1,4 +1,4 @@
-![Logo](Rlogo.svg)
+![Logo](Rlogo.png)
 
 # R
 Version: 3.3.2
