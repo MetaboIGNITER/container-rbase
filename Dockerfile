@@ -18,7 +18,7 @@ RUN apt-get -y update && apt-get -y --no-install-recommends install apt-transpor
 RUN apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
 # Add test script
-ADD runTest1.R /usr/bin/runTest1.R
+ADD runTest1.R /usr/local/bin/runTest1.R
  
 # Define Entry point
 ENTRYPOINT ["/usr/bin/runTest1.R"]
