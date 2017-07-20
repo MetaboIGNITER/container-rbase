@@ -25,5 +25,5 @@ RUN apt-get -y update && apt-get -y --no-install-recommends install apt-transpor
 ADD runTest1.R /usr/local/bin/runTest1.R
  
 # Define Entry point
-ENTRYPOINT ["R"]
+#ENTRYPOINT ["R"]
 
