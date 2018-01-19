@@ -1,7 +1,7 @@
 ![Logo](Rlogo.png)
 
 # R
-Version: 3.4.1
+Version: 3.4.3
 
 ## Short Description
 
@@ -20,6 +20,7 @@ The container contains the base R that should be used as the precursor for subse
 ## Container Contributors
 
 - [Kristian Peters](https://github.com/korseby) (IPB-Halle)
+- [Pablo Moreno](https://github.com/pcm32) (EMBL-EBI)
 
 ## Website
 
