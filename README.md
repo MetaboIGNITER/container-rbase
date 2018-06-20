@@ -1,7 +1,7 @@
 ![Logo](Rlogo.png)
 
 # R
-Version: 3.4.3
+Version: 3.4.4
 
 ## Short Description
 
