@@ -11,16 +11,21 @@ LABEL documentation="https://github.com/phnmnl/container-rbase"
 LABEL license="https://github.com/phnmnl/container-rbase/blob/develop/License.txt"
 LABEL tags="Statistics"
 
-ENV software_version="3.4.4-1xenial0"
-
-# Add cran R backport
-RUN echo "deb http://cloud.r-project.org/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list && \
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+ENV software_version="4.0.2"
 
 # Install r-base
-RUN apt-get -y update && apt-get -y --no-install-recommends install apt-transport-https r-base=${software_version} r-base-dev=${software_version} && \ 
+RUN apt-get -y update 
+RUN apt-get -y --no-install-recommends install apt-transport-https ca-certificates
+
+# Add cran R backport
+RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu xenial-cran40/" >> /etc/apt/sources.list && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+
+RUN apt-get -y update && apt-get -y --no-install-recommends install r-base r-base-dev && \ 
     apt-get -y clean && apt-get -y autoremove && rm -rf /var/lib/{cache,log}/ /tmp/* /var/tmp/*
 
 # Add test script
 ADD runTest1.R /usr/local/bin/runTest1.R
+
 
